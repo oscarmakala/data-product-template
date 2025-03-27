@@ -1,8 +1,8 @@
 apiVersion: datamesh.org/v1alpha1
 kind: DataProduct
 metadata:
-  name: example-data-product
-  domain: domain-name  # Replace with your domain name (finance, marketing, etc.)
+  name: dp01
+  domain: nhic  # Replace with your domain name (finance, marketing, etc.)
   description: "Description of your data product"
   version: 0.1.0
   tags:
@@ -10,8 +10,8 @@ metadata:
     - tag2
 spec:
   owner:
-    team: your-team
-    email: team@example.com
+    team: platform-product
+    email: omakala@sandtech.com
   inputs:
     - name: input-source-name
       source: source-domain/source-dataset

@@ -1,7 +1,7 @@
 [project]
-name = "data-product"
+name = "dp01"
 version = "0.1.0"
-description = "Data product"
+description = "Data product dp01"
 authors = ["Oscar Makala <omakala@sandtech.com>"]
 requires-python = ">=3.11"
 dependencies = [

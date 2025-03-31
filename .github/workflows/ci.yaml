@@ -10,6 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+
+      - name: Extract metadata
+        id: metadata
+        run: |
+          echo "domain=$(grep -m 1 'domain:' metadata.yaml | cut -d ':' -f 2 | xargs)" >> $GITHUB_OUTPUT
+          echo "name=$(grep -m 1 'name:' metadata.yaml | cut -d ':' -f 2 | xargs)" >> $GITHUB_OUTPUT
+
       - name: Login to Container Registry
         uses: docker/login-action@v2
         with:
@@ -22,7 +29,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.REGISTRY_URL }}/${{ steps.metadata.outputs.domain }}/${{ steps.metadata.outputs.name }}:latest
+          tags: ${{ secrets.REGISTRY_URL }}/oscarmakala/${{ steps.metadata.outputs.domain }}/${{ steps.metadata.outputs.name }}:latest
 
 #      - name: Update Kubernetes manifests
 #        run: |

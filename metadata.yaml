@@ -1,8 +1,8 @@
 apiVersion: datamesh.org/v1alpha1
 kind: DataProduct
 metadata:
-  name: dp01
-  domain: nhic  # Replace with your domain name (finance, marketing, etc.)
+  name: data-product-name
+  domain: domain-streamalignedteam  # Replace with your domain name (finance, marketing, etc.)
   description: "Description of your data product"
   version: 0.1.0
   tags:
@@ -10,8 +10,8 @@ metadata:
     - tag2
 spec:
   owner:
-    team: platform-product
-    email: omakala@sandtech.com
+    team: team-name
+    email: xxxxx@sandtech.com
   inputs:
     - name: input-source-name
       source: source-domain/source-dataset

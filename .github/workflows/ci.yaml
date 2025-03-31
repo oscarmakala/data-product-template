@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       
       - name: Extract metadata
         id: metadata
@@ -29,13 +30,3 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.REGISTRY_URL }}/oscarmakala/${{ steps.metadata.outputs.domain }}/${{ steps.metadata.outputs.name }}:latest
-
-#      - name: Update Kubernetes manifests
-#        run: |
-#          sed -i "s|image:.*|image: ${{ secrets.REGISTRY_URL }}/${{ steps.metadata.outputs.domain }}/${{ steps.metadata.outputs.name }}:${{ github.sha }}|g" k8s/deployment.yaml
-#
-#      - name: Commit and push updated manifests
-#        uses: stefanzweifel/git-auto-commit-action@v4
-#        with:
-#          commit_message: "Update image to ${{ github.sha }}"
-#          file_pattern: k8s/deployment.yaml
